@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C03B818C-F555-4641-A197-F9AF324D09B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CCLMS</RootNamespace>
+    <AssemblyName>CCLMS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>lib\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Siticone.Desktop.UI">
+      <HintPath>lib\Siticone.Desktop.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\AccountInfoLibrarian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\AccountInfoLibrarian.Designer.cs">
+      <DependentUpon>AccountInfoLibrarian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\LibrarianDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\LibrarianDashboardForm.Designer.cs">
+      <DependentUpon>LibrarianDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\DataGridViewDetailViews\LibrarianDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\DataGridViewDetailViews\LibrarianDetailsView.Designer.cs">
+      <DependentUpon>LibrarianDetailsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\DataGridViewDetailViews\BookDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\DataGridViewDetailViews\BookDetailsForm.Designer.cs">
+      <DependentUpon>BookDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\DataGridViewDetailViews\StudentDetailsViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\DataGridViewDetailViews\StudentDetailsViews.Designer.cs">
+      <DependentUpon>StudentDetailsViews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\DataGridViewDetailViews\StudentFeedbackDetailsViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\DataGridViewDetailViews\StudentFeedbackDetailsViews.Designer.cs">
+      <DependentUpon>StudentFeedbackDetailsViews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\IssueAndReturnBookDataDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\IssueAndReturnBookDataDelete.Designer.cs">
+      <DependentUpon>IssueAndReturnBookDataDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\ReservationRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\ReservationRemove.Designer.cs">
+      <DependentUpon>ReservationRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UpdateLibrarianInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\UpdateLibrarianInfo.Designer.cs">
+      <DependentUpon>UpdateLibrarianInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UpdateBooksInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\UpdateBooksInfo.Designer.cs">
+      <DependentUpon>UpdateBooksInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UpdateStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\UpdateStudentInfo.Designer.cs">
+      <DependentUpon>UpdateStudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\AddLibrarian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\AddLibrarian.Designer.cs">
+      <DependentUpon>AddLibrarian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\AddBookForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\AddBookForm.Designer.cs">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\AddStudents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\AddStudents.Designer.cs">
+      <DependentUpon>AddStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\BookFine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\BookFine.Designer.cs">
+      <DependentUpon>BookFine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\DashboardLibrarian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\DashboardLibrarian.Designer.cs">
+      <DependentUpon>DashboardLibrarian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\StudentsFeedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\StudentsFeedback.Designer.cs">
+      <DependentUpon>StudentsFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\ViewBooks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\ViewBooks.Designer.cs">
+      <DependentUpon>ViewBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\ViewLibrarian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\ViewLibrarian.Designer.cs">
+      <DependentUpon>ViewLibrarian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\ViewStudents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\UserControlForms\ViewStudents.Designer.cs">
+      <DependentUpon>ViewStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateAccountForm.Designer.cs">
+      <DependentUpon>CreateAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forget Password Form\ResetPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forget Password Form\ResetPasswordForm.Designer.cs">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forget Password Form\SendOtpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forget Password Form\SendOtpForm.Designer.cs">
+      <DependentUpon>SendOtpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreenForm.Designer.cs">
+      <DependentUpon>SplashScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\AccountInfoStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\AccountInfoStudent.Designer.cs">
+      <DependentUpon>AccountInfoStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\DataGridViewDetailViews\BookDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\DataGridViewDetailViews\BookDetailsForm.Designer.cs">
+      <DependentUpon>BookDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\IssueBookDatagrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\IssueBookDatagrid.Designer.cs">
+      <DependentUpon>IssueBookDatagrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\ReservationBookSelectDatagridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\ReservationBookSelectDatagridView.Designer.cs">
+      <DependentUpon>ReservationBookSelectDatagridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StudentDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\StudentDashboardForm.Designer.cs">
+      <DependentUpon>StudentDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UpdateAccountInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\UpdateAccountInfo.Designer.cs">
+      <DependentUpon>UpdateAccountInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\BookReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\BookReservation.Designer.cs">
+      <DependentUpon>BookReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\CompleteBookDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\CompleteBookDetails.Designer.cs">
+      <DependentUpon>CompleteBookDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\CompleteStudentsDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\CompleteStudentsDetails.Designer.cs">
+      <DependentUpon>CompleteStudentsDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\DashboardStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\DashboardStudent.Designer.cs">
+      <DependentUpon>DashboardStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\Feedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\IssueBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\IssueBook.Designer.cs">
+      <DependentUpon>IssueBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\ReadingHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\ReadingHistory.Designer.cs">
+      <DependentUpon>ReadingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\ReturnBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\ReturnBook.Designer.cs">
+      <DependentUpon>ReturnBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\BooksList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\BooksList.Designer.cs">
+      <DependentUpon>BooksList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UserControlForms\ViewReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControlForms\ViewReservation.Designer.cs">
+      <DependentUpon>ViewReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VersionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionsForm.Designer.cs">
+      <DependentUpon>VersionsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\AccountInfoLibrarian.resx">
+      <DependentUpon>AccountInfoLibrarian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\LibrarianDashboardForm.resx">
+      <DependentUpon>LibrarianDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\DataGridViewDetailViews\LibrarianDetailsView.resx">
+      <DependentUpon>LibrarianDetailsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\DataGridViewDetailViews\BookDetailsForm.resx">
+      <DependentUpon>BookDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\DataGridViewDetailViews\StudentDetailsViews.resx">
+      <DependentUpon>StudentDetailsViews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\DataGridViewDetailViews\StudentFeedbackDetailsViews.resx">
+      <DependentUpon>StudentFeedbackDetailsViews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\IssueAndReturnBookDataDelete.resx">
+      <DependentUpon>IssueAndReturnBookDataDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\ReservationRemove.resx">
+      <DependentUpon>ReservationRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UpdateLibrarianInfo.resx">
+      <DependentUpon>UpdateLibrarianInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UpdateBooksInfo.resx">
+      <DependentUpon>UpdateBooksInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UpdateStudentInfo.resx">
+      <DependentUpon>UpdateStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UserControlForms\AddLibrarian.resx">
+      <DependentUpon>AddLibrarian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UserControlForms\AddBookForm.resx">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UserControlForms\AddStudents.resx">
+      <DependentUpon>AddStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UserControlForms\BookFine.resx">
+      <DependentUpon>BookFine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UserControlForms\DashboardLibrarian.resx">
+      <DependentUpon>DashboardLibrarian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UserControlForms\StudentsFeedback.resx">
+      <DependentUpon>StudentsFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UserControlForms\ViewBooks.resx">
+      <DependentUpon>ViewBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UserControlForms\ViewLibrarian.resx">
+      <DependentUpon>ViewLibrarian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\UserControlForms\ViewStudents.resx">
+      <DependentUpon>ViewStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAccountForm.resx">
+      <DependentUpon>CreateAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forget Password Form\ResetPasswordForm.resx">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forget Password Form\SendOtpForm.resx">
+      <DependentUpon>SendOtpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreenForm.resx">
+      <DependentUpon>SplashScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\AccountInfoStudent.resx">
+      <DependentUpon>AccountInfoStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\DataGridViewDetailViews\BookDetailsForm.resx">
+      <DependentUpon>BookDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\IssueBookDatagrid.resx">
+      <DependentUpon>IssueBookDatagrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\ReservationBookSelectDatagridView.resx">
+      <DependentUpon>ReservationBookSelectDatagridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\StudentDashboardForm.resx">
+      <DependentUpon>StudentDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UpdateAccountInfo.resx">
+      <DependentUpon>UpdateAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\BookReservation.resx">
+      <DependentUpon>BookReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\CompleteBookDetails.resx">
+      <DependentUpon>CompleteBookDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\CompleteStudentsDetails.resx">
+      <DependentUpon>CompleteStudentsDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\DashboardStudent.resx">
+      <DependentUpon>DashboardStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\IssueBook.resx">
+      <DependentUpon>IssueBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\ReadingHistory.resx">
+      <DependentUpon>ReadingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\ReturnBook.resx">
+      <DependentUpon>ReturnBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\BooksList.resx">
+      <DependentUpon>BooksList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControlForms\ViewReservation.resx">
+      <DependentUpon>ViewReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionsForm.resx">
+      <DependentUpon>VersionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
